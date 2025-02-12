@@ -69,12 +69,12 @@ public class ArticleController extends Controller {
 			return;
 		}
 		
-		System.out.printf("%-2s	| %30s | %-16s | %-3s\n", "번호", "제목", "작성일", "작성자");
+		System.out.printf("%-2s	| %25s | %16s | %8s\n", "번호", "제목", "작성일", "작성자");
 		
 		for (int i = articles.size() - 1; i >= 0; i--) {
 			Article article = articles.get(i);
 			String writerName = memberService.getWriterName(article.getMemberId());
-			System.out.printf("%-2s	| %30s | %-18s | %-10s\n", article.getId(), article.getTitle(), article.getUpdateDate(), writerName);
+			System.out.printf("%-2s	| %25s | %18s | %10s\n", article.getId(), article.getTitle(), article.getUpdateDate(), writerName);
 		}
 	}
 
